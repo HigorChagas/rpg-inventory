@@ -2,6 +2,7 @@ from inventory.inventory import (
     add_item,
     edit_item,
     find_by_category,
+    find_by_name,
     list_items,
     load_inventory,
     remove_item,
@@ -32,7 +33,7 @@ def main():
         print(f"{bcolors.WARNING}3{bcolors.ENDC} - Mostrar itens")
         print(f"{bcolors.WARNING}4{bcolors.ENDC} - Buscar item pela categoria")
         print(f"{bcolors.WARNING}5{bcolors.ENDC} - Mostrar categorias")
-        print(f"{bcolors.WARNING}6{bcolors.ENDC} - TODO")
+        print(f"{bcolors.WARNING}6{bcolors.ENDC} - Buscar item pelo nome")
         print(f"{bcolors.WARNING}7{bcolors.ENDC} - Editar Item")
         print(f"{bcolors.WARNING}8{bcolors.ENDC} - Sair\n")
 
@@ -78,7 +79,11 @@ def main():
             case 5:
                 print(show_categories(categories))
             case 6:
-                pass
+                item_name = input("Qual o nome do item: ").strip().lower()
+                try:
+                    find_by_name(inventory, item_name)
+                except Exception as e:
+                    print(e)
             case 7:
                 try:
                     item_name = input("Qual o nome do item: ").strip().lower()
