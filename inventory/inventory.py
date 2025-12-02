@@ -78,9 +78,19 @@ def find_by_name(inventory, item_name):
         if item_name in item["name"]:
             results.append(item)
 
+    for i, obj in enumerate(results, 1):
+        print(f"🟦 Slot {i} 🟦")
+        print(f"Nome: {obj['name']}")
+        print(f"Categoria: {obj['category']}")
+        print(f"Peso {obj['weight']}\n")
+
     if len(results) == 0:
         raise ValueError("Nenhum item com esse nome foi encontrado")
-    return results
+
+    if not item_name:
+        raise ValueError("Por favor, forneça o nome do item")
+
+    return
 
 
 def show_categories(categories):
