@@ -1,3 +1,33 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+.venv/
+
+# Pytest / coverage
+.cache/
+.pytest_cache/
+htmlcov/
+*.cover
+coverage.xml
+nosetests.xml
+*.log
+
+# VSCode / IDEs
+.vscode/
+.idea/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de dados temporários / locais
 data.json
+uv.lock
+
+# Arquivos de teste / conftest do pytest
+conftest.py
